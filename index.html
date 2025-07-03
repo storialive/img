@@ -9,16 +9,15 @@
   <style>body { margin: 0; overflow: hidden; }</style>
 </head>
 <body>
-
   <script>
-  window.addEventListener("load", () => {
-    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-      navigator.mediaDevices.getUserMedia({ video: true });
-    }
-  });
-</script>
+    // Forza la richiesta della fotocamera
+    window.addEventListener("load", () => {
+      if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+        navigator.mediaDevices.getUserMedia({ video: true });
+      }
+    });
+  </script>
 
-  
   <a-scene
     mindar-image="imageTargetSrc: https://storialive.github.io/img/targets.mind;"
     embedded
@@ -26,10 +25,11 @@
     renderer="colorManagement: true; antialias: true;"
     vr-mode-ui="enabled: false"
     device-orientation-permission-ui="enabled: true"
+    cameraPermissionUIEnabled="true"
     debug="true"
   >
     <a-assets>
-      <img id="info-img" src="https://storialive.github.io/img/target_preview.png" />
+      <img id="info-img" src="https://storialive.github.io/img/target_preview.png" crossorigin="anonymous" />
     </a-assets>
 
     <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
@@ -47,4 +47,3 @@
   </a-scene>
 </body>
 </html>
-
