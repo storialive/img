@@ -9,6 +9,16 @@
   <style>body { margin: 0; overflow: hidden; }</style>
 </head>
 <body>
+
+  <script>
+  window.addEventListener("load", () => {
+    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+      navigator.mediaDevices.getUserMedia({ video: true });
+    }
+  });
+</script>
+
+  
   <a-scene
     mindar-image="imageTargetSrc: https://storialive.github.io/img/targets.mind;"
     embedded
