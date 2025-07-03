@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <title>Demo AR funzionante</title>
+  <title>Demo AR — StoriaLive</title>
   <script src="https://cdn.jsdelivr.net/npm/aframe@1.3.0/dist/aframe.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.1.4/dist/mindar-image-aframe.prod.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mind-ar@1.1.4/dist/mindar-image-aframe.prod.css" />
@@ -17,32 +17,24 @@
       }
     });
   </script>
-
   <a-scene
-    mindar-image="imageTargetSrc: https://storialive.github.io/img/targets.mind;"
+    mindar-image="imageTargetSrc: ./targets.mind;"
     embedded
     color-space="sRGB"
     renderer="colorManagement: true; antialias: true;"
     vr-mode-ui="enabled: false"
     device-orientation-permission-ui="enabled: true"
-    cameraPermissionUIEnabled="true"
-    debug="true"
   >
     <a-assets>
-      <img id="info-img" src="https://storialive.github.io/img/target_preview.png" crossorigin="anonymous" />
+      <img id="info-img" src="./target_preview.png" />
     </a-assets>
 
     <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
     <a-entity mindar-image-target="targetIndex: 0">
-      <a-image src="#info-img" position="0 0 0" width="1" height="0.6"></a-image>
-      <a-text
-        value="Titolo: La Creazione\nArtista: Tizio\nData: 1450"
-        align="center"
-        position="0 -0.6 0"
-        scale="0.5 0.5 0.5"
-        color="#FFF"
-      ></a-text>
+      <a-image src="#info-img" position="0 0 0" width="1" height="0.5"></a-image>
+      <a-text value="Demo: Riconoscimento marker attivo!" align="center"
+              position="0 -0.6 0" scale="0.5 0.5 0.5" color="#FFFFFF"></a-text>
     </a-entity>
   </a-scene>
 </body>
